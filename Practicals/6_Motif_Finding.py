@@ -1,7 +1,7 @@
 import random
 
 l=int(input("Enter the length of motif"))
-file=open("motif.txt","r")
+file=open("FLAVI.txt","r")
 r=file.read()
 print("Sequence",r)
 size=len(r)
