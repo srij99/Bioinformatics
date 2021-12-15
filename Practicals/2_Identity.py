@@ -3,9 +3,10 @@ def Identity(s1,s2):
     Gap(s1,s2)
     print(s1,s2)
     total_Elements = len(s1)*len(s2)
-    for i in range(len(s1)):
-        if s1[i]==s2[i]:
-            score+=1
+    for i in range(0,len(s1)): 
+        for j in range(0,len(s1)):
+             if s1[i]==s2[j]:
+                score+=1
     identity = (score/total_Elements)*100
     print("The Matching score is ",score)
     print("The Identity is ",identity)
