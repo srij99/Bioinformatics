@@ -1,26 +1,29 @@
-def Similarity(s1,s2,similarities):
-    print(s1,s2,similarities)
-    score = 0
-    for i in range(len(s1)):
-        for j in range(len(similarities)):
-            if s1[i] in similarities[j] and s2[i] in similarities[j] and s1[i]!=s2[i]:
-                score+=1
-    similarity = (score*100)/len(s1)
-    print("The similarity is ",similarity)
-
-if __name__ == "__main__":
-    s1 = list(input("Enter the first sequence: "))
-    s2 = list(input("Enter the second sequence: "))
-    similarities = []
-    NS = int(input("How many similar elements : "))
-    for i in range(NS):
-        a = input("Enter the similar element: ")
-        b = int(input("How many elements is it similar to :"))
-        similarities.append([])
-        similarities[i].append(a)
-        for j in range(b):
-            c = input("What is it similar to :")
-            similarities[i].append(c)
-    Similarity(s1,s2,similarities)
-
-
+sequence_one=input("Enter the first sequence: ") 
+sequence_two=input("Enter the second sequence: ") 
+how_many=int(input("How many elements for similarity condition?")) 
+similarities=[] 
+for i in range(0,how_many): 
+    a=input("Enter an element: ") 
+    c=int(input("How many elements is it similar to? ")) 
+    similarities.append([]) 
+    similarities[i].append(a) 
+ 
+    for j in range(0,c): 
+        b=input("What is it similar to? ") 
+ 
+        similarities[i].append(b) 
+def compare(o,t,s): 
+    print(o) 
+    print(t) 
+    print(s) 
+ #checking if similar 
+    score=0 
+    for i in range(len(o)): 
+       for j in range(len(s)): 
+ 
+           if o[i] in s[j] and t[i] in s[j] and o[i] != t[i]: 
+               score+=1 
+  
+    similarity= (score*100)/len(o) 
+    return similarity 
+print(compare(list(sequence_one),list(sequence_two),similarities),"%")
